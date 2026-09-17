@@ -1,6 +1,6 @@
 import argparse
 import os
-import tomllib
+import toml
 from pathlib import Path
 
 from openai import OpenAI
@@ -13,7 +13,7 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 # Load settings file
 settings_path = Path("settings.toml")
 with settings_path.open("rb") as settings_file:
-    SETTINGS = tomllib.load(settings_file)
+    SETTINGS = toml.load(settings_file)
 
 
 def parse_args() -> argparse.Namespace:
